@@ -1,0 +1,43 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:1:1-12:12
+	package
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:5:5-27
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:4:5-30
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:2:5-63
+	android:versionCode
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:3:5-28
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+application
+ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:7:3-10:17
+	android:label
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:9:7-39
+	android:allowBackup
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml:8:7-33
+uses-sdk
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		ADDED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
+		INJECTED from /Users/sylvain/Git/GoMore/android-app/GoMore/Caldroid/caldroid/src/main/AndroidManifest.xml
