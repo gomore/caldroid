@@ -14,4 +14,8 @@ allprojects {
     google()
     jcenter()
   }
+
+  project.ext {
+    supportVersion = "26.1.0"
+  }
 }
