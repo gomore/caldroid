@@ -1,5 +1,5 @@
 plugins {
-  id("com.android.library")
+  id("com.android.library") version "3.3.0"
 }
 
 android {
