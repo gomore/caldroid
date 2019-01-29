@@ -1,13 +1,13 @@
 package com.antonyt.infiniteviewpager;
 
 import android.content.Context;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Scroller;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import hirondelle.date4j.DateTime;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -120,28 +120,28 @@ public class InfiniteViewPager extends ViewPager {
     int height = getMeasuredHeight();
     if (wrapHeight && rowHeight == 0) {
       /*
-			 * The first super.onMeasure call made the pager take up all the
-			 * available height. Since we really wanted to wrap it, we need to
-			 * remeasure it. Luckily, after that call the first child is now
-			 * available. So, we take the height from it.
-			 */
+       * The first super.onMeasure call made the pager take up all the
+       * available height. Since we really wanted to wrap it, we need to
+       * remeasure it. Luckily, after that call the first child is now
+       * available. So, we take the height from it.
+       */
 
       int width = getMeasuredWidth();
 
       // Use the previously measured width but simplify the calculations
       widthMeasureSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
 
-			/*
-			 * If the pager actually has any children, take the first child's
-			 * height and call that our own
-			 */
+      /*
+       * If the pager actually has any children, take the first child's
+       * height and call that our own
+       */
       if (getChildCount() > 0) {
         View firstChild = getChildAt(0);
 
-				/*
-				 * The child was previously measured with exactly the full
-				 * height. Allow it to wrap this time around.
-				 */
+        /*
+         * The child was previously measured with exactly the full
+         * height. Allow it to wrap this time around.
+         */
         firstChild.measure(widthMeasureSpec,
             MeasureSpec.makeMeasureSpec(height, MeasureSpec.AT_MOST));
 

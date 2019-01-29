@@ -1,9 +1,9 @@
 package com.antonyt.infiniteviewpager;
 
 import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.viewpager.widget.PagerAdapter;
 
 /**
  * A PagerAdapter that wraps around another PagerAdapter to handle paging
@@ -41,9 +41,9 @@ public class InfinitePagerAdapter extends PagerAdapter {
     adapter.destroyItem(container, virtualPosition, object);
   }
 
-	/*
+  /*
    * Delegate rest of methods directly to the inner adapter.
-	 */
+   */
 
   @Override public void finishUpdate(ViewGroup container) {
     adapter.finishUpdate(container);

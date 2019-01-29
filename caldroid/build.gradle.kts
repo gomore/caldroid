@@ -20,6 +20,6 @@ android {
 }
 
 dependencies {
-  api("com.android.support:support-v4:28.0.0")
+  api("androidx.fragment:fragment:1.0.0")
   api("com.darwinsys:hirondelle-date4j:1.5.1")
 }

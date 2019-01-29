@@ -1,10 +1,10 @@
 package com.roomorama.caldroid;
 
 import android.content.Context;
-import android.support.annotation.DrawableRes;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.annotation.DrawableRes;
 import com.caldroid.R;
 
 //
