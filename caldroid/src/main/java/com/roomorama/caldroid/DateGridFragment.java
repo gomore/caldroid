@@ -1,13 +1,13 @@
 package com.roomorama.caldroid;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
+import androidx.fragment.app.Fragment;
 import com.caldroid.R;
 
 /**
