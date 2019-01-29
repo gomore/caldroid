@@ -26,6 +26,7 @@
         >
 
       <ImageView
+          android:id="@+id/calendar_left_arrow_image_view"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
@@ -60,6 +61,7 @@
         >
 
       <ImageView
+          android:id="@+id/calendar_right_arrow_image_view"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"

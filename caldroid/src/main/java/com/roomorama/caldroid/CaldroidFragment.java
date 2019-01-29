@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -128,7 +129,9 @@ import java.util.TimeZone;
    * Caldroid view components
    */
   private View leftArrowButton;
+  private ImageView leftArrowButtonImageView;
   private View rightArrowButton;
+  private ImageView rightArrowButtonImageView;
   private TextView monthTitleTextView;
   private GridView weekdayGridView;
   private InfiniteViewPager dateViewPager;
@@ -168,8 +171,8 @@ import java.util.TimeZone;
   protected String dialogTitle;
   protected int month = -1;
   protected int year = -1;
-  protected List<DateTime> disableDates = new ArrayList<DateTime>();
-  protected Set<DateTime> selectedDates = new HashSet<DateTime>();
+  protected List<DateTime> disableDates = new ArrayList<>();
+  protected Set<DateTime> selectedDates = new HashSet<>();
   protected DateTime minDateTime;
   protected DateTime maxDateTime;
   protected ArrayList<DateTime> dateInMonthsList;
@@ -177,29 +180,27 @@ import java.util.TimeZone;
   /**
    * caldroidData belongs to Caldroid
    */
-  protected HashMap<String, Object> caldroidData = new HashMap<String, Object>();
+  protected HashMap<String, Object> caldroidData = new HashMap<>();
 
   /**
    * extraData belongs to client
    */
-  protected HashMap<String, Object> extraData = new HashMap<String, Object>();
+  protected HashMap<String, Object> extraData = new HashMap<>();
 
   /**
    * backgroundForDateMap holds background resource for each date
    */
-  protected HashMap<DateTime, Integer> backgroundForDateTimeMap = new HashMap<DateTime, Integer>();
+  protected HashMap<DateTime, Integer> backgroundForDateTimeMap = new HashMap<>();
 
   /**
    * selectedBackgroundForDateMap holds selected background resource for each date
    */
-  protected HashMap<DateTime, Integer> selectedBackgroundForDateTimeMap =
-      new HashMap<DateTime, Integer>();
+  protected HashMap<DateTime, Integer> selectedBackgroundForDateTimeMap = new HashMap<>();
 
   /**
    * textColorForDateMap holds color for text for each date
    */
-  protected HashMap<DateTime, Integer> textColorForDateTimeMap = new HashMap<DateTime, Integer>();
-  ;
+  protected HashMap<DateTime, Integer> textColorForDateTimeMap = new HashMap<>();
 
   /**
    * First column of calendar is Sunday
@@ -215,7 +216,7 @@ import java.util.TimeZone;
   /**
    * datePagerAdapters hold 4 adapters, meant to be reused
    */
-  protected ArrayList<CaldroidGridAdapter> datePagerAdapters = new ArrayList<CaldroidGridAdapter>();
+  protected ArrayList<CaldroidGridAdapter> datePagerAdapters = new ArrayList<>();
 
   /**
    * To control the navigation
@@ -256,7 +257,7 @@ import java.util.TimeZone;
    * provide custom adapter here
    */
   public CaldroidGridAdapter getNewDatesGridAdapter(int month, int year) {
-    return new CaldroidGridAdapter(getActivity(), month, year, getCaldroidData(), extraData);
+    return new CaldroidGridAdapter(requireActivity(), month, year, getCaldroidData(), extraData);
   }
 
   /**
@@ -264,7 +265,7 @@ import java.util.TimeZone;
    * provide custom adapter here
    */
   public WeekdayArrayAdapter getNewWeekdayAdapter() {
-    return new WeekdayArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,
+    return new WeekdayArrayAdapter(requireActivity(), android.R.layout.simple_list_item_1,
         getDaysOfWeek());
   }
 
@@ -289,8 +290,16 @@ import java.util.TimeZone;
     return leftArrowButton;
   }
 
+  public ImageView getLeftArrowButtonImageView() {
+    return leftArrowButtonImageView;
+  }
+
   public View getRightArrowButton() {
     return rightArrowButton;
+  }
+
+  public ImageView getRightArrowButtonImageView() {
+    return rightArrowButtonImageView;
   }
 
   /**
@@ -864,7 +873,7 @@ import java.util.TimeZone;
     // This is the method used by the platform Calendar app to get a
     // correctly localized month name for display on a wall calendar
     monthYearStringBuilder.setLength(0);
-    String monthTitle = DateUtils.formatDateRange(getActivity(), monthYearFormatter, millis, millis,
+    String monthTitle = DateUtils.formatDateRange(requireActivity(), monthYearFormatter, millis, millis,
         MONTH_YEAR_FLAG).toString();
 
     char first = Character.toUpperCase(monthTitle.charAt(0));
@@ -1041,9 +1050,11 @@ import java.util.TimeZone;
     // For the monthTitleTextView
     monthTitleTextView = (TextView) view.findViewById(R.id.calendar_month_year_textview);
 
-    // For the left arrow button
+    // For the navigation buttons
     leftArrowButton = view.findViewById(R.id.calendar_left_arrow);
+    leftArrowButtonImageView = view.findViewById(R.id.calendar_left_arrow_image_view);
     rightArrowButton = view.findViewById(R.id.calendar_right_arrow);
+    rightArrowButtonImageView = view.findViewById(R.id.calendar_right_arrow_image_view);
 
     // Navigate to previous month when user click
     leftArrowButton.setOnClickListener(new OnClickListener() {
@@ -1065,7 +1076,7 @@ import java.util.TimeZone;
     setShowNavigationArrows(showNavigationArrows);
 
     // For the weekday gridview ("SUN, MON, TUE, WED, THU, FRI, SAT")
-    weekdayGridView = (GridView) view.findViewById(R.id.weekday_gridview);
+    weekdayGridView = view.findViewById(R.id.weekday_gridview);
     WeekdayArrayAdapter weekdaysAdapter = getNewWeekdayAdapter();
     weekdayGridView.setAdapter(weekdaysAdapter);
 
@@ -1133,7 +1144,7 @@ import java.util.TimeZone;
     // Setup InfiniteViewPager and InfinitePagerAdapter. The
     // InfinitePagerAdapter is responsible
     // for reuse the fragments
-    dateViewPager = (InfiniteViewPager) view.findViewById(R.id.months_infinite_pager);
+    dateViewPager = view.findViewById(R.id.months_infinite_pager);
 
     // Set enable swipe
     dateViewPager.setEnabled(enableSwipe);
