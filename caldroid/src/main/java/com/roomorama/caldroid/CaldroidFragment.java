@@ -19,7 +19,6 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
@@ -27,7 +26,6 @@ import com.antonyt.infiniteviewpager.InfinitePagerAdapter;
 import com.antonyt.infiniteviewpager.InfiniteViewPager;
 import com.caldroid.R;
 import hirondelle.date4j.DateTime;
-import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -1368,19 +1366,5 @@ import java.util.TimeZone;
     private boolean scrolling = false;
     private boolean waitingForPageChange = false;
     private int waitingPage = -1;
-  }
-
-  @Override public void onDetach() {
-    super.onDetach();
-
-    try {
-      Field childFragmentManager = Fragment.class.getDeclaredField("mChildFragmentManager");
-      childFragmentManager.setAccessible(true);
-      childFragmentManager.set(this, null);
-    } catch (NoSuchFieldException e) {
-      throw new RuntimeException(e);
-    } catch (IllegalAccessException e) {
-      throw new RuntimeException(e);
-    }
   }
 }
