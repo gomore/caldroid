@@ -1,3 +1,3 @@
 before_install:
-  - yes | sdkmanager --install "build-tools;28.0.3" "tools" "platform-tools" "platforms;android-28" || true
-  - ./gradlew androidDependencies app:androidDependencies app:dependencies backend:dependencies dependencies
+  - yes | sdkmanager --install "build-tools;29.0.2" "tools" "platform-tools" "platforms;android-29" || true
+  - ./gradlew androidDependencies caldroid:androidDependencies caldroid:dependencies dependencies
