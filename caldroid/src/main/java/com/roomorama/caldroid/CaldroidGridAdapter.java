@@ -217,9 +217,7 @@ public class CaldroidGridAdapter extends BaseAdapter {
    * To be used only in getView method
    */
   protected void customizeTextView(int position, CellView cellView) {
-    cellView.setBackgroundResource(R.drawable.white_clickable);
     cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text));
-
     // Get the padding of cell so that it can be restored later
     int topPadding = cellView.getPaddingTop();
     int leftPadding = cellView.getPaddingLeft();

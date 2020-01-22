@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     android:adjustViewBounds="true"
-    android:background="#ffffff"
     android:gravity="center_horizontal"
     android:numColumns="7"
     android:paddingBottom="@dimen/margin_small"
