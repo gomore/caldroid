@@ -3,8 +3,10 @@ package com.roomorama.caldroid;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import hirondelle.date4j.DateTime;
+
 import java.util.HashMap;
+
+import hirondelle.date4j.DateTime;
 
 //
 // GoMoreCaldroidGridAdapter
@@ -94,14 +96,15 @@ public class GoMoreCaldroidGridAdapter extends CaldroidGridAdapter {
     }
 
     // Next/Prev month - Disabled
-    if (dateTime.getMonth() != month || dateTime.compareTo(getToday()) < 0) {
-      cellView.setDisabled();
-    }
+//    if (dateTime.getMonth() != month || dateTime.compareTo(getToday()) < 0) {
+//      cellView.setDisabled();
+//    }
 
     // OutsideMin/Max - Disabled
-    if ((minDateTime != null && dateTime.lt(minDateTime)) || (maxDateTime != null && dateTime.gt(
-        maxDateTime))) {
-      cellView.setDisabled();
+    if ((minDateTime != null && dateTime.lt(minDateTime)) || (maxDateTime != null && dateTime.gt(maxDateTime))) {
+      cellView.setEnabled(false);
+    } else {
+      cellView.setEnabled(true);
     }
 
     // Selected

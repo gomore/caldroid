@@ -4,7 +4,9 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.DrawableRes;
+
 import com.caldroid.R;
 
 //
@@ -54,8 +56,12 @@ public class GoMoreCellView extends FrameLayout {
     selectedBackgroundResource = resource;
   }
 
-  public void setDisabled() {
-    textView.setTextColor(getContext().getResources().getColor(R.color.grey_text_light));
+  @Override
+  public void setEnabled(boolean enabled) {
+    super.setEnabled(enabled);
+    if (!enabled) {
+      textView.setTextColor(getContext().getResources().getColor(R.color.grey_text_light));
+    }
   }
 
   public void setIsToday() {

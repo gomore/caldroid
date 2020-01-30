@@ -7,13 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.caldroid.R;
-import hirondelle.date4j.DateTime;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
+
+import hirondelle.date4j.DateTime;
 
 /**
  * The CaldroidGridAdapter provides customized view for the dates gridview
@@ -228,11 +231,11 @@ public class CaldroidGridAdapter extends BaseAdapter {
     DateTime dateTime = this.datetimeList.get(position);
 
     // Set color of the dates in previous / next month
-    if (dateTime.getMonth() != month) {
-      cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
-    } else if (dateTime.compareTo(getToday()) < 0) {
-      cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
-    }
+    //if (dateTime.getMonth() != month) {
+    //  cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
+    //} else if (dateTime.compareTo(getToday()) < 0) {
+    //  cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
+    //}
 
     boolean shouldResetDiabledView = false;
     boolean shouldResetSelectedView = false;
