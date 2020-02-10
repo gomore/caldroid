@@ -242,39 +242,64 @@ public class CaldroidGridAdapter extends BaseAdapter {
     boolean shouldResetDiabledView = false;
     boolean shouldResetSelectedView = false;
 
-    // Customize for disabled dates and date outside min/max dates
-    if ((minDateTime != null && dateTime.lt(minDateTime)) || (maxDateTime != null && dateTime.gt(
-        maxDateTime)) || (disableDates != null && disableDatesMap.containsKey(dateTime))) {
+//    // Customize for disabled dates and date outside min/max dates
+//    if ((minDateTime != null && dateTime.lt(minDateTime)) || (maxDateTime != null && dateTime.gt(
+//        maxDateTime)) || (disableDates != null && disableDatesMap.containsKey(dateTime))) {
+//
+//      cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
+//      if (CaldroidFragment.disabledBackgroundDrawable == -1) {
+//        //cellView.setBackgroundResource(R.drawable.disable_cell);
+//      } else {
+//        //cellView.setBackgroundResource(CaldroidFragment.disabledBackgroundDrawable);
+//      }
+//
+//      if (dateTime.equals(getToday())) {
+//        cellView.getTextView().setTextColor(resources.getColor(R.color.blue_light));
+//      }
+//
+//      cellView.setEnabled(false);
+//    } else {
+//      shouldResetDiabledView = true;
+//    }
+//
+//    // Customize for selected dates
+//    if (selectedDates != null && selectedDatesMap.containsKey(dateTime)) {
+//      cellView.setSelected(true);
+//      cellView.getTextView().setTextColor(resources.getColor(R.color.white));
+//    } else {
+//      cellView.setSelected(false);
+//      shouldResetSelectedView = true;
+//    }
+//
+//    if (shouldResetDiabledView && shouldResetSelectedView) {
+//      // Customize for today
+//      if (dateTime.equals(getToday())) {
+//        cellView.getTextView().setTextColor(resources.getColor(R.color.blue_light));
+//      }
+//    }
 
-      cellView.getTextView().setTextColor(resources.getColor(R.color.grey_text_light));
-      if (CaldroidFragment.disabledBackgroundDrawable == -1) {
-        //cellView.setBackgroundResource(R.drawable.disable_cell);
-      } else {
-        //cellView.setBackgroundResource(CaldroidFragment.disabledBackgroundDrawable);
-      }
-      cellView.setEnabled(false);
-
-      if (dateTime.equals(getToday())) {
-        cellView.getTextView().setTextColor(resources.getColor(R.color.blue_light));
-      }
-    } else {
-      shouldResetDiabledView = true;
+    // Today
+    if (dateTime.equals(getToday())) {
+      cellView.getTextView().setTextColor(resources.getColor(R.color.blue_light));
     }
 
-    // Customize for selected dates
+    // Next/Prev month - Disabled
+//    if (dateTime.getMonth() != month || dateTime.compareTo(getToday()) < 0) {
+//      cellView.setDisabled();
+//    }
+
+    // OutsideMin/Max - Disabled
+    if ((minDateTime != null && dateTime.lt(minDateTime)) || (maxDateTime != null && dateTime.gt(maxDateTime))) {
+      cellView.setEnabled(false);
+    } else {
+      cellView.setEnabled(true);
+    }
+
+    // Selected
     if (selectedDates != null && selectedDatesMap.containsKey(dateTime)) {
       cellView.setSelected(true);
-      cellView.getTextView().setTextColor(resources.getColor(R.color.white));
     } else {
       cellView.setSelected(false);
-      shouldResetSelectedView = true;
-    }
-
-    if (shouldResetDiabledView && shouldResetSelectedView) {
-      // Customize for today
-      if (dateTime.equals(getToday())) {
-        cellView.getTextView().setTextColor(resources.getColor(R.color.blue_light));
-      }
     }
 
     // Set text

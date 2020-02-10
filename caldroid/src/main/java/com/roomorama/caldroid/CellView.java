@@ -24,9 +24,18 @@ public class CellView extends FrameLayout {
 
   public void setSelected(boolean selected) {
     if (selected) {
+      textView.setTextColor(getContext().getResources().getColor(R.color.white));
       imageView.setVisibility(View.VISIBLE);
     } else {
       imageView.setVisibility(View.INVISIBLE);
+    }
+  }
+
+  @Override
+  public void setEnabled(boolean enabled) {
+    super.setEnabled(enabled);
+    if (!enabled) {
+      textView.setTextColor(getContext().getResources().getColor(R.color.grey_text_light));
     }
   }
 
